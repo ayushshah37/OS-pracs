@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main()
-{   int at[100],bt[100],ct[100],tat[100],total_bt=0,wt[100],temp1,temp2,temp,process[100],total_tat=0,total_wt=0,n;
+{   int at[100],bt[100],ct[100],tat[100],total_bt=0,wt[100],temp1,temp2,temp,process[100],total_tat=0,total_wt=0,n,i,j;
     float avg_wt,avg_tat;
     printf("enter the no. of processes:");
     scanf("%d",&n);
@@ -51,7 +51,22 @@ int main()
     avg_wt=(float)total_wt/n;
     
     printf("avg TAT=%f \n ",avg_tat);
-    printf("avg WT=%f",avg_wt);
-
+    printf("avg WT=%f \n",avg_wt);
+    
+    
+    for(i=0,j=0;i<ct[n-1];){
+        if(i<at[j]){
+            printf("%d|--",i);
+            i++;
+        }
+        else if(i>=at[j]){
+            printf("|%d|P%d",i,process[j]);
+            i=ct[j];
+            j++;
+        }}
+        printf("|%d",ct[n-1]);
+    
+    
     return 0;
 }
+
